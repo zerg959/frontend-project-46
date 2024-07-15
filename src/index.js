@@ -17,20 +17,22 @@ const gendiff = (filepath1, filepath2) => {
   const final = ['{']
   for (const elem of sortedKeys) {
     if (!(Object.hasOwn(data2, elem))) {
-      final.push(` - ${elem}:${data1[elem]}`)
+      final.push(`  - ${elem}:${data1[elem]}`)
     } else if (!(Object.hasOwn(data1, elem))) {
-      final.push(` + ${elem}:${data2[elem]}`) 
+      final.push(`  + ${elem}:${data2[elem]}`) 
       } else {
       if (data1[elem] === data2[elem]) {
-        final.push(`   ${elem}:${data2[elem]}`)
+        final.push(`    ${elem}:${data2[elem]}`)
       }
       if (data1[elem] !== data2[elem]) {
-        final.push(` - ${elem}:${data1[elem]}`)
-        final.push(` + ${elem}:${data2[elem]}`)
+        final.push(`  - ${elem}:${data1[elem]}`)
+        final.push(`  + ${elem}:${data2[elem]}`)
       }
     }
   }
-  console.log(final);
+  final.push('}')
+  const newFinal = final.join('\n')
+  console.log(newFinal);
 }
 
 
