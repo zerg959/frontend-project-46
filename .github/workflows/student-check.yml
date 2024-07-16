@@ -28,6 +28,6 @@ jobs:
           CODECLIMATE_TEST_COVERAGE_ID: ${{ secrets.CODECLIMATE_TEST_COVERAGE_ID }}
         with:
           coverageCommand: make test-coverage
-          debug: true
+          # debug: true
 
   
