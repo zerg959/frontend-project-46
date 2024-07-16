@@ -1,5 +1,33 @@
-name: personal-check
+name: Diff Check
 
-on: push
+on: 
+  - push
+env:
+  CI:true
 jobs:
+  build:
+    runs-on: ubunte-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+    
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js @{{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: make install
+      - run: make lint
+      - run: make test
+      - name: Test & publish coverage
+        uses: paambaati/codeclimate-action@v5.0.0
+        env:
+          CODECLIMATE_TEST_COVERAGE_ID: ${{ secrets.CODECLIMATE_TEST_COVERAGE_ID }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
+
   

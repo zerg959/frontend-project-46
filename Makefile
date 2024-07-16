@@ -11,8 +11,12 @@ run:
 		node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json
 
 test:
-		gendiff __fixtures__/file1.json __fixtures__/file2.json
+		# gendiff __fixtures__/file1.json __fixtures__/file2.json
+		npx jest
 
+test-coverage:
+		npx jest --coverage
+		
 lint:
 		npx eslint .
 
