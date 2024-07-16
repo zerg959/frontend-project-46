@@ -3,7 +3,7 @@ name: Diff Check
 on: 
   - push
 env:
-  CI:true
+  CI: true
 jobs:
   build:
     runs-on: ubunte-latest
