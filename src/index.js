@@ -5,7 +5,7 @@ import getDifferenceTree from './buildAST.js';
 import formatter from './formatters/index.js';
 import _ from 'lodash';
 
-const resolvePath = (filePath) => path.resolve(process.cwd(), filePath);
+const resolvePath = (filePath) => path.join(process.cwd(),'__fixtures__', filePath);
 
 const getExtension = (filename) => path.extname(filename).slice(1);
 
