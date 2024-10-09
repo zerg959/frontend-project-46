@@ -1,10 +1,3 @@
-const result = `{
-  - follow: false
-    host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
-}`;
+const result = `"{\"common\":{\"setting1\":\"Value1\",\"setting2\":200,\"setting3\":true,\"setting6\":{\"key\":\"value\",\"doge\":{\"wow\":\"\"}}},\"group1\":{\"baz\":\"bas\",\"foo\":\"bar\",\"nest\":{\"key\":\"value\"}},\"group2\":{\"abc\":12345,\"deep\":{\"id\":45}}}"}`;
 
 export default result;

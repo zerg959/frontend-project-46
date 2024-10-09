@@ -1,4 +1,4 @@
-import _, { get } from 'lodash';
+import _ from 'lodash';
 
 const getPath = (nodeNames) => nodeNames.flat().join('.');
 
@@ -8,7 +8,7 @@ const getFormattedValue = (value) => {
       return !value ? 'null' : '[complex value]';
     }
     case 'string': {
-      return `${value}`;
+      return `'${value}'`;
     }
     default: {
       return `${value}`;
@@ -30,10 +30,10 @@ export function makePlainDiff(tree) {
         return `Property '${currentPath}' was updated. From ${getFormattedValue(child.oldValue)} to ${getFormattedValue(child.newValue)}`;
       }
       case 'removed': {
-        return `Property '${currentPath} was removed`;
+        return `Property '${currentPath}' was removed`;
       }
       case 'unchanged': {
-        return `Property '${currentPath} is unchanged`;
+        return null;
       }
     }
   });
@@ -43,4 +43,4 @@ export function makePlainDiff(tree) {
 export default function makePlain(data) {
   const result = makePlainDiff(data);
   return _.flattenDeep(result).filter((el) => el).join('\n');
-};
+}

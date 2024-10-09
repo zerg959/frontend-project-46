@@ -1,4 +1,4 @@
-import _ from 'lodah';
+import _ from 'lodash';
 
 const indent = ' ';
 const indentSize = 4;
@@ -22,7 +22,7 @@ const stringify = (data, depth) => {
 
 const makeStylishDiff = (tree) => {
   const iter = (node, depth) => {
-    switch (node, type) {
+    switch (node.type) {
       case 'root': {
         const result = node.children.flatMap((child)=> iter(child, depth));
         return joinStrings(result, depth);

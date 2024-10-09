@@ -3,7 +3,7 @@ import path from 'node:path';
 import parser from './parsers.js';
 import getDifferenceTree from './buildAST.js';
 import formatter from './formatters/index.js';
-import _ from lodash;
+import _ from 'lodash';
 
 const resolvePath = (filePath) => path.resolve(process.cwd(), filePath);
 

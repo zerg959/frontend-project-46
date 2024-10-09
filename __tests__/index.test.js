@@ -9,7 +9,7 @@ const testList = [
   'json',
 ];
 
-const resolvePath = (filePath) => path.resolve(process.cwd(), `__fixtures/${filePath}`);
+const resolvePath = (filePath) => path.resolve(process.cwd(), `__fixtures__/${filePath}`);
 
 describe('gendiff', () => {
   test.each(testList)('gendiff %s', (format) => {
