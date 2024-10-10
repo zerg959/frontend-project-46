@@ -24,7 +24,7 @@ const makeStylishDiff = (tree) => {
   const iter = (node, depth) => {
     switch (node.type) {
       case 'root': {
-        const result = node.children.flatMap((child)=> iter(child, depth));
+        const result = node.children.flatMap((child) => iter(child, depth));
         return joinStrings(result, depth);
       }
       case 'nested': {
@@ -39,13 +39,13 @@ const makeStylishDiff = (tree) => {
       }
       case 'changed': {
         return [`${currentIndent(depth)}- ${node.key}: ${stringify(node.oldValue, depth + 1)}`,
-        `${currentIndent(depth)}+ ${node.key}: ${stringify(node.newValue, depth + 1)}`];
+          `${currentIndent(depth)}+ ${node.key}: ${stringify(node.newValue, depth + 1)}`];
       }
       case 'unchanged': {
         return `${currentIndent(depth)}  ${node.key}: ${stringify(node.value, depth + 1)}`;
       }
       default: {
-        throw Error('Incorrect data')
+        throw Error('Uncorrect data');
       }
     }
   };

@@ -17,7 +17,7 @@ const getFormattedValue = (value) => {
 };
 
 export function makePlainDiff(tree) {
-  const iter = (node, path) => node.map((child) =>{
+  const iter = (node, path) => node.map((child) => {
     const currentPath = getPath([path, child.key]);
     switch (child.type) {
       case 'nested': {
@@ -34,6 +34,9 @@ export function makePlainDiff(tree) {
       }
       case 'unchanged': {
         return null;
+      }
+      default: {
+        throw Error('Uncorrect data');
       }
     }
   });

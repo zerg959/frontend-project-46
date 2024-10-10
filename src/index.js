@@ -3,13 +3,14 @@ import path from 'node:path';
 import parser from './parsers.js';
 import getDifferenceTree from './buildAST.js';
 import formatter from './formatters/index.js';
-import _ from 'lodash';
 
-const resolvePath = (filePath) => path.join(process.cwd(),'__fixtures__', filePath);
+const resolvePath = (filePath) => (filePath.includes('__fixtures__')
+  ? path.resolve(process.cwd(), filePath)
+  : path.resolve(process.cwd(), `__fixtures__/${filePath}`));
 
 const getExtension = (filename) => path.extname(filename).slice(1);
 
-const getData = (filePath) => parser(readFileSync(filePath,'utf-8'), getExtension(filePath));
+const getData = (filePath) => parser(readFileSync(filePath, 'utf-8'), getExtension(filePath));
 
 const gendiff = (filePath1, filePath2, format = 'stylish') => {
   const path1 = resolvePath(filePath1);
@@ -20,6 +21,5 @@ const gendiff = (filePath1, filePath2, format = 'stylish') => {
 
   return formatter(getDifferenceTree(data1, data2), format);
 };
-// readFileSync()
 
 export default gendiff;
