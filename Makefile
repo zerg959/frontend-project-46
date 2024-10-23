@@ -17,4 +17,4 @@ test-coverage:
 	npm test -- --coverage --coverageProvider=v8
 
 lint:
-		sudo npx eslint .
+		npx eslint .
