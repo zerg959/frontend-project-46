@@ -1,7 +1,6 @@
 name: Diff Check CI
 
-on:
-  - push
+on: push
 
 env:
   CI: true
