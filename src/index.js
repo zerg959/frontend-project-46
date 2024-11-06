@@ -4,10 +4,9 @@ import parser from './parsers.js';
 import getDifferenceTree from './buildAST.js';
 import formatter from './formatters/index.js';
 
-// const resolvePath = (filePath) => (filePath.includes('__fixtures__')
-//   ? path.resolve(process.cwd(), filePath)
-//   : path.resolve(process.cwd(), `__fixtures__/${filePath}`));
-const resolvePath = (filePath) => path.resolve(process.cwd(), filePath);
+const resolvePath = (filePath) => (filePath.includes('__fixtures__')
+  ? path.resolve(process.cwd(), filePath)
+  : path.resolve(process.cwd(), `__fixtures__/${filePath}`));
 
 const getExtension = (filename) => path.extname(filename).slice(1);
 
