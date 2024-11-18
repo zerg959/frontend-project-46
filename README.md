@@ -17,6 +17,8 @@
     <li>Install Node Packet Manager (npm)</li>
     <li>Clone repository (git clone git@github.com:zerg959/frontend-project-46.git)</li>
     <li>Install dependencies (npm install)</li>
+    <li>Publish project as package:<b>make publish --dry-run</b></li>
+    <li>Run <b>npm link</b>for linking parts of the package</li>
 </ul>
 
 ### Examples
@@ -24,7 +26,7 @@
     <li><b>make run</b> - Example of using package.<br> https://asciinema.org/a/AOp8T1lJZD30f99ZdgoMPq7IA</li>
     <li><b>make test</b> - Run tests.<br> https://asciinema.org/a/2VhnWPN84klI2QNF8XxgTQRN8</li>
     <li>Add compared files into __fixtures__ directory (yaml, yml or json formats)</li>
-    <li>In root directory in terminal use command: "node bin/gendiff __fixtures__/file1.json __fixtures__/file2.json". This will return the answer in default format: tree with status marks in data</li>
+    <li>In root directory in terminal use command like this: <b>"node bin/gendiff file1.json file2.json"</b>.<br>It returns the answer in default format: tree with status marks in data</li>
 </ul>
 
 ### Options
