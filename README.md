@@ -10,7 +10,7 @@
 - Use syntax like: gendiff [options] <filepath1> <filepath2> - to compare two files and shows differences.
 - Compared files are in default __fixtures__ directory.
 - gendiff allows compare files in .json, .yml and .yaml formats.
-- [options] : to use options use syntax like: gendiff --format plain filepath1.json filepath2.json; options changes format of output data. JSON (--format json), string (--format palin) or default tree-structure.
+- [options] : to use options use syntax like: <b>gendiff --format plain filepath1.json filepath2.json<b>;<br>options changes format of output data. JSON (--format json), string (--format palin) or default tree-structure.
 - [options] - realized options: "plain", "json",
 <ul>
     <li>Install node.js</li>
